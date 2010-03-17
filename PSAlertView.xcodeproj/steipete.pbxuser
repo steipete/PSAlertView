@@ -116,6 +116,8 @@
 			786FC60711512A57006D6759 /* PlistBookmark */ = 786FC60711512A57006D6759 /* PlistBookmark */;
 			786FC60811512A57006D6759 /* PlistBookmark */ = 786FC60811512A57006D6759 /* PlistBookmark */;
 			786FC61711512A77006D6759 /* PlistBookmark */ = 786FC61711512A77006D6759 /* PlistBookmark */;
+			786FC61B11512AAD006D6759 /* PlistBookmark */ = 786FC61B11512AAD006D6759 /* PlistBookmark */;
+			786FC62111512ADC006D6759 /* PlistBookmark */ = 786FC62111512ADC006D6759 /* PlistBookmark */;
 		};
 		sourceControlManager = 780D0BE01151257A008EEC55 /* Source Control */;
 		userBuildSettings = {
@@ -227,11 +229,11 @@
 		delayBeforeContinue = 0;
 		fileReference = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
 		functionName = "-secondAlert:";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 15;
 		location = PSAlertView;
-		modificationTime = 290531303.529156;
+		modificationTime = 290532015.464591;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -321,6 +323,30 @@
 		rLoc = 9223372036854775807;
 	};
 	786FC61711512A77006D6759 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PSAlertView-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/steipete/Documents/Projekte/MyExamples/PSAlertView/PSAlertView-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	786FC61B11512AAD006D6759 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PSAlertView-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/steipete/Documents/Projekte/MyExamples/PSAlertView/PSAlertView-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	786FC62111512ADC006D6759 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* PSAlertView-Info.plist */;
 		fallbackIsa = PBXBookmark;
