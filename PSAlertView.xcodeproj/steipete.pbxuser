@@ -1,5 +1,12 @@
 // !$*UTF8*$!
 {
+	1D3623250D0F684500981E51 /* PSAlertViewAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {651, 442}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 614}";
+		};
+	};
 	1D6058900D05DD3D006BFB54 /* PSAlertView */ = {
 		activeExec = 0;
 		executables = (
@@ -15,15 +22,15 @@
 	};
 	28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 624}}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 598}}";
 			sepNavSelRange = "{951, 0}";
-			sepNavVisRange = "{51, 961}";
+			sepNavVisRange = "{51, 712}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 780D0BD01151256B008EEC55 /* PSAlertView */;
-		activeSDKPreference = iphonesimulator3.1.3;
+		activeSDKPreference = iphoneos3.1.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PSAlertView */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PSAlertView */,
@@ -36,6 +43,20 @@
 			780D0BD01151256B008EEC55 /* PSAlertView */,
 		);
 		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					361,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
@@ -80,22 +101,21 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 290530667;
-			PBXWorkspaceStateSaveDate = 290530667;
+			PBXPerProjectTemplateStateSaveDate = 290531864;
+			PBXWorkspaceStateSaveDate = 290531864;
 		};
 		perUserProjectItems = {
-			780D0BEC11512666008EEC55 /* PBXTextBookmark */ = 780D0BEC11512666008EEC55 /* PBXTextBookmark */;
-			780D0BED11512666008EEC55 /* PBXTextBookmark */ = 780D0BED11512666008EEC55 /* PBXTextBookmark */;
-			780D0BEE11512666008EEC55 /* PBXTextBookmark */ = 780D0BEE11512666008EEC55 /* PBXTextBookmark */;
-			780D0BEF11512666008EEC55 /* PBXTextBookmark */ = 780D0BEF11512666008EEC55 /* PBXTextBookmark */;
-			780D0BF61151270F008EEC55 /* PBXTextBookmark */ = 780D0BF61151270F008EEC55 /* PBXTextBookmark */;
-			780D0C0211512726008EEC55 /* PBXTextBookmark */ = 780D0C0211512726008EEC55 /* PBXTextBookmark */;
-			780D0C0711512746008EEC55 /* PBXTextBookmark */ = 780D0C0711512746008EEC55 /* PBXTextBookmark */;
-			780D0C0811512746008EEC55 /* PBXTextBookmark */ = 780D0C0811512746008EEC55 /* PBXTextBookmark */;
-			780D0C19115127B9008EEC55 /* PBXTextBookmark */ = 780D0C19115127B9008EEC55 /* PBXTextBookmark */;
-			780D0C20115127E0008EEC55 /* PBXTextBookmark */ = 780D0C20115127E0008EEC55 /* PBXTextBookmark */;
-			780D0C22115127EA008EEC55 /* PBXTextBookmark */ = 780D0C22115127EA008EEC55 /* PBXTextBookmark */;
-			780D0C23115127EE008EEC55 /* PBXTextBookmark */ = 780D0C23115127EE008EEC55 /* PBXTextBookmark */;
+			780D0BEC11512666008EEC55 = 780D0BEC11512666008EEC55 /* PBXTextBookmark */;
+			780D0BED11512666008EEC55 = 780D0BED11512666008EEC55 /* PBXTextBookmark */;
+			780D0C3011512A00008EEC55 = 780D0C3011512A00008EEC55 /* PBXTextBookmark */;
+			780D0C3111512A00008EEC55 = 780D0C3111512A00008EEC55 /* PlistBookmark */;
+			780D0C3211512A00008EEC55 = 780D0C3211512A00008EEC55 /* PlistBookmark */;
+			786FC60411512A57006D6759 /* PBXTextBookmark */ = 786FC60411512A57006D6759 /* PBXTextBookmark */;
+			786FC60511512A57006D6759 /* PBXTextBookmark */ = 786FC60511512A57006D6759 /* PBXTextBookmark */;
+			786FC60611512A57006D6759 /* PBXTextBookmark */ = 786FC60611512A57006D6759 /* PBXTextBookmark */;
+			786FC60711512A57006D6759 /* PlistBookmark */ = 786FC60711512A57006D6759 /* PlistBookmark */;
+			786FC60811512A57006D6759 /* PlistBookmark */ = 786FC60811512A57006D6759 /* PlistBookmark */;
+			786FC61711512A77006D6759 /* PlistBookmark */ = 786FC61711512A77006D6759 /* PlistBookmark */;
 		};
 		sourceControlManager = 780D0BE01151257A008EEC55 /* Source Control */;
 		userBuildSettings = {
@@ -110,6 +130,21 @@
 		autoAttachOnCrash = 1;
 		breakpointsEnabled = 1;
 		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
 		};
 		customDataFormattersEnabled = 1;
 		dataTipCustomDataFormattersEnabled = 1;
@@ -130,6 +165,7 @@
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		startupPath = "<<ProductDirectory>>";
 		variableFormatDictionary = {
 		};
 	};
@@ -149,9 +185,16 @@
 	};
 	780D0BE311512617008EEC55 /* PSAlertView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {651, 381}}";
+			sepNavIntBoundsRect = "{{0, 0}, {651, 352}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 664}";
+		};
+	};
+	780D0BE411512617008EEC55 /* PSAlertView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {901, 988}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 845}";
 		};
 	};
 	780D0BEC11512666008EEC55 /* PBXTextBookmark */ = {
@@ -174,46 +217,6 @@
 		vrLen = 664;
 		vrLoc = 0;
 	};
-	780D0BEE11512666008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 14";
-		rLen = 0;
-		rLoc = 666;
-		rType = 0;
-		vrLen = 572;
-		vrLoc = 51;
-	};
-	780D0BEF11512666008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 15";
-		rLen = 0;
-		rLoc = 666;
-		rType = 0;
-		vrLen = 550;
-		vrLoc = 100;
-	};
-	780D0BF61151270F008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 15";
-		rLen = 0;
-		rLoc = 322;
-		rType = 0;
-		vrLen = 946;
-		vrLoc = 51;
-	};
-	780D0C0211512726008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 17";
-		rLen = 0;
-		rLoc = 534;
-		rType = 0;
-		vrLen = 1023;
-		vrLoc = 51;
-	};
 	780D0C0311512745008EEC55 /* PSAlertViewViewController.m:15 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
@@ -232,37 +235,7 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	780D0C0711512746008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 16";
-		rLen = 0;
-		rLoc = 470;
-		rType = 0;
-		vrLen = 1025;
-		vrLoc = 51;
-	};
-	780D0C0811512746008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 16";
-		rLen = 0;
-		rLoc = 470;
-		rType = 0;
-		vrLen = 1023;
-		vrLoc = 51;
-	};
-	780D0C19115127B9008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 25";
-		rLen = 0;
-		rLoc = 931;
-		rType = 0;
-		vrLen = 997;
-		vrLoc = 51;
-	};
-	780D0C20115127E0008EEC55 /* PBXTextBookmark */ = {
+	780D0C3011512A00008EEC55 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
 		name = "PSAlertViewViewController.m: 27";
@@ -272,24 +245,91 @@
 		vrLen = 961;
 		vrLoc = 51;
 	};
-	780D0C22115127EA008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 27";
+	780D0C3111512A00008EEC55 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PSAlertView-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/steipete/Documents/Projekte/MyExamples/PSAlertView/PSAlertView-Info.plist";
 		rLen = 0;
-		rLoc = 951;
-		rType = 0;
-		vrLen = 961;
-		vrLoc = 51;
+		rLoc = 9223372036854775808;
 	};
-	780D0C23115127EE008EEC55 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* PSAlertViewViewController.m */;
-		name = "PSAlertViewViewController.m: 27";
+	780D0C3211512A00008EEC55 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PSAlertView-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/steipete/Documents/Projekte/MyExamples/PSAlertView/PSAlertView-Info.plist";
 		rLen = 0;
-		rLoc = 951;
+		rLoc = 9223372036854775808;
+	};
+	786FC60411512A57006D6759 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* PSAlertViewAppDelegate.m */;
+		name = "PSAlertViewAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
-		vrLen = 961;
-		vrLoc = 51;
+		vrLen = 614;
+		vrLoc = 0;
+	};
+	786FC60511512A57006D6759 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 780D0BE311512617008EEC55 /* PSAlertView.h */;
+		name = "PSAlertView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 664;
+		vrLoc = 0;
+	};
+	786FC60611512A57006D6759 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 780D0BE411512617008EEC55 /* PSAlertView.m */;
+		name = "PSAlertView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 845;
+		vrLoc = 0;
+	};
+	786FC60711512A57006D6759 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PSAlertView-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/steipete/Documents/Projekte/MyExamples/PSAlertView/PSAlertView-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	786FC60811512A57006D6759 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PSAlertView-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/steipete/Documents/Projekte/MyExamples/PSAlertView/PSAlertView-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	786FC61711512A77006D6759 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PSAlertView-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/steipete/Documents/Projekte/MyExamples/PSAlertView/PSAlertView-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
 	};
 }

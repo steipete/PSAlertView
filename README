@@ -1,4 +1,4 @@
-From http://petersteinberger.com/2010/03/blocks-on-the-iphone-psalertview/
+From http://petersteinberger.com/2010/03/blocks-on-the-iphone-psalertview/`
 
 It took a while to get my head around blocks. And it didn't help that they are not officially available on the iPhone. But savvy devs from Plausible Labs back-ported the GCC extensions that were added to support blocks to the iPhone. And it's AppStore-safe and they are developing it actively, now adapting it for the iPad. (I already blogged about it)
 
