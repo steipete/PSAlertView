@@ -67,7 +67,7 @@
 #pragma mark -
 #pragma mark UIAlertViewDelegate
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
   /* Run the button's block */
   if (buttonIndex >= 0 && buttonIndex < [_blocks count]) {
     void (^b)() = [_blocks objectAtIndex: buttonIndex];
