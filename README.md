@@ -1,9 +1,9 @@
 PSAlertView & PSActionSheet
 =============
 
-Block-based subclasses for UIActionSheet and UIAlertView.
+Block-based subclasses for UIActionSheet and UIAlertView, extracted from the commercial [PSPDFKit PDF framework](http://PSPDFKit.com), because I love open source.
 
-PSAlertView uses ARC and is tested with Xcode 4.4 and 4.5DP3 (iOS 4.3+)
+PSAlertView uses ARC and is tested with Xcode 4.4 and 4.5.2 (iOS 4.3+)
 
 ## Creator
 
