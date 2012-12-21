@@ -11,7 +11,7 @@
 @interface PSPDFActionSheet() <UIActionSheetDelegate> {
     id<UIActionSheetDelegate> _realDelegate;
     NSMutableArray *_blocks;
-    void (^_destroyBlock)();
+    void (^_destroyBlock)(PSPDFActionSheet *sheet, NSInteger buttonIndex);
 }
 @end
 
@@ -37,7 +37,7 @@
 #pragma mark - Public
 
 - (void)setDelegate:(id<UIActionSheetDelegate>)delegate {
-    if(delegate == nil) {
+    if (delegate == nil) {
         [super setDelegate:nil];
         _realDelegate = nil;
     }else {
@@ -48,37 +48,65 @@
     }
 }
 
-- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)())block {
+- (void)setDestructiveButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block {
     assert([title length] > 0 && "sheet destructive button title must not be empty");
 
-    [self addButtonWithTitle:title block:block];
+    [self addButtonWithTitle:title extendedBlock:block];
     self.destructiveButtonIndex = (self.numberOfButtons - 1);
 }
 
-- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)())block {
+- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)())block {
+    block = [block copy];
+    [self setDestructiveButtonWithTitle:title extendedBlock:^(PSPDFActionSheet *alert, NSInteger buttonIndex) {
+        if (block) block();
+    }];
+}
+
+- (void)setCancelButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block {
     assert([title length] > 0 && "sheet cancel button title must not be empty");
 
-    [self addButtonWithTitle:title block:block];
+    [self addButtonWithTitle:title extendedBlock:block];
     self.cancelButtonIndex = (self.numberOfButtons - 1);
 }
 
-- (void)addButtonWithTitle:(NSString *)title block:(void (^)())block {
+- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)())block {
+    block = [block copy];
+    [self setCancelButtonWithTitle:title extendedBlock:^(PSPDFActionSheet *sheet, NSInteger buttonIndex) {
+        if (block) block();
+    }];
+}
+
+- (void)addButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block {
     assert([title length] > 0 && "cannot add button with empty title");
 
     [_blocks addObject:block ? [block copy] : [NSNull null]];
     [self addButtonWithTitle:title];
 }
 
+- (void)addButtonWithTitle:(NSString *)title block:(void (^)())block {
+    block = [block copy];
+    [self addButtonWithTitle:title extendedBlock:^(PSPDFActionSheet *alert, NSInteger buttonIndex) {
+        if (block) block();
+    }];
+}
+
 - (NSUInteger)buttonCount {
     return [_blocks count];
 }
 
-- (void)destroy {
-    [_blocks removeAllObjects];
+- (void)showWithSender:(id)sender fallbackView:(UIView *)view animated:(BOOL)animated {
+    BOOL isIPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+    if (isIPad && [sender isKindOfClass:[UIBarButtonItem class]]) {
+        [self showFromBarButtonItem:sender animated:animated];
+    }else if (isIPad && [sender isKindOfClass:[UIView class]]) {
+        [self showFromRect:[sender bounds] inView:sender animated:animated];
+    }else {
+        [self showInView:view];
+    }
 }
 
-- (void)setDestroyBlock:(void (^)())block {
-    _destroyBlock = [block copy];
+- (void)destroy {
+    [_blocks removeAllObjects];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -98,13 +126,16 @@
     if (buttonIndex >= 0 && buttonIndex < [_blocks count]) {
         id obj = _blocks[buttonIndex];
         if (![obj isEqual:[NSNull null]]) {
-            ((void (^)())obj)();
+            ((void (^)())obj)(actionSheet, buttonIndex);
         }
     }
 
     if ([_realDelegate respondsToSelector:_cmd]) {
         [_realDelegate actionSheet:actionSheet clickedButtonAtIndex:buttonIndex];
     }
+
+    // manually break potential retain cycles
+    [_blocks removeAllObjects];
 }
 
 // Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the cancel button.
@@ -144,7 +175,7 @@
 
     [self destroy];
     if (_destroyBlock) {
-        _destroyBlock();
+        _destroyBlock(self, buttonIndex);
     }
     self.delegate = nil;
 }
