@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name           = 'PSAlertView'
-  s.version        = '1.0.0'
+  s.version        = '1.1'
   s.summary        = "Modern block-based wrappers for UIAlertView and UIActionSheet."
   s.homepage       = "https://github.com/steipete/PSAlertView"
   s.author         = { 'Peter Steinberger' => 'steipete@gmail.com' }
