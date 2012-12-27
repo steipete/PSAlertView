@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78CCD0F0168C5E4A00E09A4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CCD0EF168C5E4A00E09A4F /* UIKit.framework */; };
+		78CCD0F2168C5E4A00E09A4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CCD0F1168C5E4A00E09A4F /* Foundation.framework */; };
+		78CCD0F4168C5E4A00E09A4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CCD0F3168C5E4A00E09A4F /* CoreGraphics.framework */; };
+		78CCD0FA168C5E4A00E09A4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78CCD0F8168C5E4A00E09A4F /* InfoPlist.strings */; };
+		78CCD0FC168C5E4A00E09A4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD0FB168C5E4A00E09A4F /* main.m */; };
+		78CCD100168C5E4A00E09A4F /* PSCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD0FF168C5E4A00E09A4F /* PSCAppDelegate.m */; };
+		78CCD102168C5E4A00E09A4F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CCD101168C5E4A00E09A4F /* Default.png */; };
+		78CCD104168C5E4A00E09A4F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CCD103168C5E4A00E09A4F /* Default@2x.png */; };
+		78CCD106168C5E4A00E09A4F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CCD105168C5E4A00E09A4F /* Default-568h@2x.png */; };
+		78CCD109168C5E4A00E09A4F /* PSCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD108168C5E4A00E09A4F /* PSCViewController.m */; };
+		78CCD10C168C5E4A00E09A4F /* PSCViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78CCD10A168C5E4A00E09A4F /* PSCViewController_iPhone.xib */; };
+		78CCD10F168C5E4A00E09A4F /* PSCViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78CCD10D168C5E4A00E09A4F /* PSCViewController_iPad.xib */; };
+		78CCD11B168C5E5800E09A4F /* PSPDFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD116168C5E5800E09A4F /* PSPDFActionSheet.m */; };
+		78CCD11C168C5E5800E09A4F /* PSPDFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD118168C5E5800E09A4F /* PSPDFAlertView.m */; };
+		78CCD11D168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD11A168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		78CCD0EB168C5E4A00E09A4F /* PSAlertViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSAlertViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78CCD0EF168C5E4A00E09A4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		78CCD0F1168C5E4A00E09A4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		78CCD0F3168C5E4A00E09A4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		78CCD0F7168C5E4A00E09A4F /* PSAlertViewExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PSAlertViewExample-Info.plist"; sourceTree = "<group>"; };
+		78CCD0F9168C5E4A00E09A4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78CCD0FB168C5E4A00E09A4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78CCD0FD168C5E4A00E09A4F /* PSAlertViewExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PSAlertViewExample-Prefix.pch"; sourceTree = "<group>"; };
+		78CCD0FE168C5E4A00E09A4F /* PSCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSCAppDelegate.h; sourceTree = "<group>"; };
+		78CCD0FF168C5E4A00E09A4F /* PSCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSCAppDelegate.m; sourceTree = "<group>"; };
+		78CCD101168C5E4A00E09A4F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		78CCD103168C5E4A00E09A4F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		78CCD105168C5E4A00E09A4F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		78CCD107168C5E4A00E09A4F /* PSCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSCViewController.h; sourceTree = "<group>"; };
+		78CCD108168C5E4A00E09A4F /* PSCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSCViewController.m; sourceTree = "<group>"; };
+		78CCD10B168C5E4A00E09A4F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PSCViewController_iPhone.xib; sourceTree = "<group>"; };
+		78CCD10E168C5E4A00E09A4F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PSCViewController_iPad.xib; sourceTree = "<group>"; };
+		78CCD115168C5E5800E09A4F /* PSPDFActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSPDFActionSheet.h; path = ../../PSPDFActionSheet.h; sourceTree = "<group>"; };
+		78CCD116168C5E5800E09A4F /* PSPDFActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSPDFActionSheet.m; path = ../../PSPDFActionSheet.m; sourceTree = "<group>"; };
+		78CCD117168C5E5800E09A4F /* PSPDFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSPDFAlertView.h; path = ../../PSPDFAlertView.h; sourceTree = "<group>"; };
+		78CCD118168C5E5800E09A4F /* PSPDFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSPDFAlertView.m; path = ../../PSPDFAlertView.m; sourceTree = "<group>"; };
+		78CCD119168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PSPDFKitAdditions.h"; path = "../../UIColor+PSPDFKitAdditions.h"; sourceTree = "<group>"; };
+		78CCD11A168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PSPDFKitAdditions.m"; path = "../../UIColor+PSPDFKitAdditions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78CCD0E8168C5E4A00E09A4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78CCD0F0168C5E4A00E09A4F /* UIKit.framework in Frameworks */,
+				78CCD0F2168C5E4A00E09A4F /* Foundation.framework in Frameworks */,
+				78CCD0F4168C5E4A00E09A4F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78CCD0E0168C5E4A00E09A4F = {
+			isa = PBXGroup;
+			children = (
+				78CCD0F5168C5E4A00E09A4F /* PSAlertViewExample */,
+				78CCD0EE168C5E4A00E09A4F /* Frameworks */,
+				78CCD0EC168C5E4A00E09A4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78CCD0EC168C5E4A00E09A4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78CCD0EB168C5E4A00E09A4F /* PSAlertViewExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78CCD0EE168C5E4A00E09A4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78CCD0EF168C5E4A00E09A4F /* UIKit.framework */,
+				78CCD0F1168C5E4A00E09A4F /* Foundation.framework */,
+				78CCD0F3168C5E4A00E09A4F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78CCD0F5168C5E4A00E09A4F /* PSAlertViewExample */ = {
+			isa = PBXGroup;
+			children = (
+				78CCD11E168C5E5B00E09A4F /* PSAlertView */,
+				78CCD0FE168C5E4A00E09A4F /* PSCAppDelegate.h */,
+				78CCD0FF168C5E4A00E09A4F /* PSCAppDelegate.m */,
+				78CCD107168C5E4A00E09A4F /* PSCViewController.h */,
+				78CCD108168C5E4A00E09A4F /* PSCViewController.m */,
+				78CCD10A168C5E4A00E09A4F /* PSCViewController_iPhone.xib */,
+				78CCD10D168C5E4A00E09A4F /* PSCViewController_iPad.xib */,
+				78CCD0F6168C5E4A00E09A4F /* Supporting Files */,
+			);
+			path = PSAlertViewExample;
+			sourceTree = "<group>";
+		};
+		78CCD0F6168C5E4A00E09A4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78CCD0F7168C5E4A00E09A4F /* PSAlertViewExample-Info.plist */,
+				78CCD0F8168C5E4A00E09A4F /* InfoPlist.strings */,
+				78CCD0FB168C5E4A00E09A4F /* main.m */,
+				78CCD0FD168C5E4A00E09A4F /* PSAlertViewExample-Prefix.pch */,
+				78CCD101168C5E4A00E09A4F /* Default.png */,
+				78CCD103168C5E4A00E09A4F /* Default@2x.png */,
+				78CCD105168C5E4A00E09A4F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78CCD11E168C5E5B00E09A4F /* PSAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				78CCD115168C5E5800E09A4F /* PSPDFActionSheet.h */,
+				78CCD116168C5E5800E09A4F /* PSPDFActionSheet.m */,
+				78CCD117168C5E5800E09A4F /* PSPDFAlertView.h */,
+				78CCD118168C5E5800E09A4F /* PSPDFAlertView.m */,
+				78CCD119168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.h */,
+				78CCD11A168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m */,
+			);
+			name = PSAlertView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78CCD0EA168C5E4A00E09A4F /* PSAlertViewExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78CCD112168C5E4A00E09A4F /* Build configuration list for PBXNativeTarget "PSAlertViewExample" */;
+			buildPhases = (
+				78CCD0E7168C5E4A00E09A4F /* Sources */,
+				78CCD0E8168C5E4A00E09A4F /* Frameworks */,
+				78CCD0E9168C5E4A00E09A4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSAlertViewExample;
+			productName = PSAlertViewExample;
+			productReference = 78CCD0EB168C5E4A00E09A4F /* PSAlertViewExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78CCD0E2168C5E4A00E09A4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PSC;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = PSPDFKit;
+			};
+			buildConfigurationList = 78CCD0E5168C5E4A00E09A4F /* Build configuration list for PBXProject "PSAlertViewExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 78CCD0E0168C5E4A00E09A4F;
+			productRefGroup = 78CCD0EC168C5E4A00E09A4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78CCD0EA168C5E4A00E09A4F /* PSAlertViewExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78CCD0E9168C5E4A00E09A4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78CCD0FA168C5E4A00E09A4F /* InfoPlist.strings in Resources */,
+				78CCD102168C5E4A00E09A4F /* Default.png in Resources */,
+				78CCD104168C5E4A00E09A4F /* Default@2x.png in Resources */,
+				78CCD106168C5E4A00E09A4F /* Default-568h@2x.png in Resources */,
+				78CCD10C168C5E4A00E09A4F /* PSCViewController_iPhone.xib in Resources */,
+				78CCD10F168C5E4A00E09A4F /* PSCViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78CCD0E7168C5E4A00E09A4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78CCD0FC168C5E4A00E09A4F /* main.m in Sources */,
+				78CCD100168C5E4A00E09A4F /* PSCAppDelegate.m in Sources */,
+				78CCD109168C5E4A00E09A4F /* PSCViewController.m in Sources */,
+				78CCD11B168C5E5800E09A4F /* PSPDFActionSheet.m in Sources */,
+				78CCD11C168C5E5800E09A4F /* PSPDFAlertView.m in Sources */,
+				78CCD11D168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		78CCD0F8168C5E4A00E09A4F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78CCD0F9168C5E4A00E09A4F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		78CCD10A168C5E4A00E09A4F /* PSCViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78CCD10B168C5E4A00E09A4F /* en */,
+			);
+			name = PSCViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		78CCD10D168C5E4A00E09A4F /* PSCViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78CCD10E168C5E4A00E09A4F /* en */,
+			);
+			name = PSCViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78CCD110168C5E4A00E09A4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78CCD111168C5E4A00E09A4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78CCD113168C5E4A00E09A4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PSAlertViewExample/PSAlertViewExample-Prefix.pch";
+				INFOPLIST_FILE = "PSAlertViewExample/PSAlertViewExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		78CCD114168C5E4A00E09A4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PSAlertViewExample/PSAlertViewExample-Prefix.pch";
+				INFOPLIST_FILE = "PSAlertViewExample/PSAlertViewExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78CCD0E5168C5E4A00E09A4F /* Build configuration list for PBXProject "PSAlertViewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78CCD110168C5E4A00E09A4F /* Debug */,
+				78CCD111168C5E4A00E09A4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78CCD112168C5E4A00E09A4F /* Build configuration list for PBXNativeTarget "PSAlertViewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78CCD113168C5E4A00E09A4F /* Debug */,
+				78CCD114168C5E4A00E09A4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78CCD0E2168C5E4A00E09A4F /* Project object */;
+}
