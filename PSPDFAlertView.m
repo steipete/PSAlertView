@@ -82,31 +82,43 @@
     }
 }
 
-- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)())block {
+- (NSInteger)setCancelButtonWithTitle:(NSString *)title block:(void (^)())block {
     block = [block copy];
-    [self setCancelButtonWithTitle:title extendedBlock:^(PSPDFAlertView *alert, NSInteger buttonIndex) {
+    return [self setCancelButtonWithTitle:title extendedBlock:^(PSPDFAlertView *alert, NSInteger buttonIndex) {
         if (block) block();
     }];
 }
 
-- (void)setCancelButtonWithTitle:(NSString *)title extendedBlock:(void (^)(PSPDFAlertView *alert, NSInteger buttonIndex))block {
+- (NSInteger)setCancelButtonWithTitle:(NSString *)title extendedBlock:(void (^)(PSPDFAlertView *alert, NSInteger buttonIndex))block {
     assert([title length] > 0 && "cannot set empty button title");
 
-    [self addButtonWithTitle:title extendedBlock:block];
-    self.cancelButtonIndex = (self.numberOfButtons - 1);
+    NSUInteger buttonIndex = [self addButtonWithTitle:title extendedBlock:block];
+    self.cancelButtonIndex = buttonIndex;
+    return buttonIndex;
 }
 
-- (void)addButtonWithTitle:(NSString *)title block:(void (^)())block {
+- (NSInteger)addButtonWithTitle:(NSString *)title block:(void (^)())block {
     block = [block copy];
-    [self addButtonWithTitle:title extendedBlock:^(PSPDFAlertView *alert, NSInteger buttonIndex) {
+    return[self addButtonWithTitle:title extendedBlock:^(PSPDFAlertView *alert, NSInteger buttonIndex) {
         if (block) block();}
      ];
 }
 
-- (void)addButtonWithTitle:(NSString *)title extendedBlock:(void (^)(PSPDFAlertView *alert, NSInteger buttonIndex))block {
+- (NSInteger)addButtonWithTitle:(NSString *)title extendedBlock:(void (^)(PSPDFAlertView *alert, NSInteger buttonIndex))block {
     assert([title length] > 0 && "cannot add button with empty title");
     [_blocks addObject:block ? [block copy] : [NSNull null]];
-    [self addButtonWithTitle:title];
+    return [self addButtonWithTitle:title];
+}
+
+- (NSInteger)addButtonWithTitle:(NSString *)title {
+    NSInteger buttonIndex = [super addButtonWithTitle:title];
+
+    // ensure blocks array is equal to number of buttons.
+    while ([_blocks count] < self.numberOfButtons) {
+        [_blocks addObject:[NSNull null]];
+    }
+
+    return buttonIndex;
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
@@ -218,6 +230,7 @@
 
 //  Created by Michał Zaborowski on 18/07/12.
 //  Copyright (c) 2012 Michał Zaborowski. All rights reserved.
+//  Modified by Peter Steinberger.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
