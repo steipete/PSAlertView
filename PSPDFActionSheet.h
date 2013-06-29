@@ -16,6 +16,8 @@
 /// Default initializer.
 - (id)initWithTitle:(NSString *)title;
 
+- (id)initWithTitle:(NSString *)title delegate:(id<UIActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... __attribute__((unavailable("Please use initWithTitle:")));
+
 /// @name Adding Buttons
 
 /// Adds a cancel button. Use only once.
