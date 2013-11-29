@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9225C6A91848804300B41E32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9225C6A81848804300B41E32 /* Foundation.framework */; };
+		9225C6D41848806E00B41E32 /* PSPDFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9225C6CF1848806E00B41E32 /* PSPDFActionSheet.m */; };
+		9225C6D51848806E00B41E32 /* PSPDFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9225C6D11848806E00B41E32 /* PSPDFAlertView.m */; };
+		9225C6D61848806E00B41E32 /* UIColor+PSPDFKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9225C6D31848806E00B41E32 /* UIColor+PSPDFKitAdditions.m */; };
+		9225C6D81848809400B41E32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9225C6D71848809400B41E32 /* UIKit.framework */; };
+		9225C6DB184880E000B41E32 /* UIColor+PSPDFKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9225C6D31848806E00B41E32 /* UIColor+PSPDFKitAdditions.m */; };
+		9225C6DC184880E000B41E32 /* PSPDFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9225C6CF1848806E00B41E32 /* PSPDFActionSheet.m */; };
+		9225C6DD184880E000B41E32 /* PSPDFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9225C6D11848806E00B41E32 /* PSPDFAlertView.m */; };
+		9225C6DF184880E000B41E32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9225C6D71848809400B41E32 /* UIKit.framework */; };
+		9225C6E0184880E000B41E32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9225C6A81848804300B41E32 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9225C6A31848804300B41E32 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9225C6E1184880E000B41E32 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9225C6A51848804300B41E32 /* libPSPDFAlertView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPSPDFAlertView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9225C6A81848804300B41E32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9225C6B61848804300B41E32 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9225C6B91848804300B41E32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9225C6CE1848806E00B41E32 /* PSPDFActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPDFActionSheet.h; sourceTree = SOURCE_ROOT; };
+		9225C6CF1848806E00B41E32 /* PSPDFActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPDFActionSheet.m; sourceTree = SOURCE_ROOT; };
+		9225C6D01848806E00B41E32 /* PSPDFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPDFAlertView.h; sourceTree = SOURCE_ROOT; };
+		9225C6D11848806E00B41E32 /* PSPDFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPDFAlertView.m; sourceTree = SOURCE_ROOT; };
+		9225C6D21848806E00B41E32 /* UIColor+PSPDFKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PSPDFKitAdditions.h"; sourceTree = SOURCE_ROOT; };
+		9225C6D31848806E00B41E32 /* UIColor+PSPDFKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PSPDFKitAdditions.m"; sourceTree = SOURCE_ROOT; };
+		9225C6D71848809400B41E32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9225C6E5184880E000B41E32 /* libPSPDFAlertView+arm64.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPSPDFAlertView+arm64.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9225C6A21848804300B41E32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9225C6D81848809400B41E32 /* UIKit.framework in Frameworks */,
+				9225C6A91848804300B41E32 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9225C6DE184880E000B41E32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9225C6DF184880E000B41E32 /* UIKit.framework in Frameworks */,
+				9225C6E0184880E000B41E32 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9225C69C1848804300B41E32 = {
+			isa = PBXGroup;
+			children = (
+				9225C6AA1848804300B41E32 /* Code */,
+				9225C6A71848804300B41E32 /* Frameworks */,
+				9225C6A61848804300B41E32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9225C6A61848804300B41E32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9225C6A51848804300B41E32 /* libPSPDFAlertView.a */,
+				9225C6E5184880E000B41E32 /* libPSPDFAlertView+arm64.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9225C6A71848804300B41E32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9225C6D71848809400B41E32 /* UIKit.framework */,
+				9225C6A81848804300B41E32 /* Foundation.framework */,
+				9225C6B61848804300B41E32 /* XCTest.framework */,
+				9225C6B91848804300B41E32 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9225C6AA1848804300B41E32 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				9225C6CE1848806E00B41E32 /* PSPDFActionSheet.h */,
+				9225C6CF1848806E00B41E32 /* PSPDFActionSheet.m */,
+				9225C6D01848806E00B41E32 /* PSPDFAlertView.h */,
+				9225C6D11848806E00B41E32 /* PSPDFAlertView.m */,
+				9225C6D21848806E00B41E32 /* UIColor+PSPDFKitAdditions.h */,
+				9225C6D31848806E00B41E32 /* UIColor+PSPDFKitAdditions.m */,
+			);
+			name = Code;
+			path = PSPDFAlertView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9225C6A41848804300B41E32 /* PSPDFAlertView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9225C6C81848804300B41E32 /* Build configuration list for PBXNativeTarget "PSPDFAlertView" */;
+			buildPhases = (
+				9225C6A11848804300B41E32 /* Sources */,
+				9225C6A21848804300B41E32 /* Frameworks */,
+				9225C6A31848804300B41E32 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSPDFAlertView;
+			productName = PSPDFAlertView;
+			productReference = 9225C6A51848804300B41E32 /* libPSPDFAlertView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9225C6D9184880E000B41E32 /* PSPDFAlertView+arm64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9225C6E2184880E000B41E32 /* Build configuration list for PBXNativeTarget "PSPDFAlertView+arm64" */;
+			buildPhases = (
+				9225C6DA184880E000B41E32 /* Sources */,
+				9225C6DE184880E000B41E32 /* Frameworks */,
+				9225C6E1184880E000B41E32 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PSPDFAlertView+arm64";
+			productName = PSPDFAlertView;
+			productReference = 9225C6E5184880E000B41E32 /* libPSPDFAlertView+arm64.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9225C69D1848804300B41E32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 9225C6A01848804300B41E32 /* Build configuration list for PBXProject "PSPDFAlertView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9225C69C1848804300B41E32;
+			productRefGroup = 9225C6A61848804300B41E32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9225C6A41848804300B41E32 /* PSPDFAlertView */,
+				9225C6D9184880E000B41E32 /* PSPDFAlertView+arm64 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9225C6A11848804300B41E32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9225C6D61848806E00B41E32 /* UIColor+PSPDFKitAdditions.m in Sources */,
+				9225C6D41848806E00B41E32 /* PSPDFActionSheet.m in Sources */,
+				9225C6D51848806E00B41E32 /* PSPDFAlertView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9225C6DA184880E000B41E32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9225C6DB184880E000B41E32 /* UIColor+PSPDFKitAdditions.m in Sources */,
+				9225C6DC184880E000B41E32 /* PSPDFActionSheet.m in Sources */,
+				9225C6DD184880E000B41E32 /* PSPDFAlertView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9225C6C61848804300B41E32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9225C6C71848804300B41E32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9225C6C91848804300B41E32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				DSTROOT = /tmp/PSPDFAlertView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9225C6CA1848804300B41E32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				DSTROOT = /tmp/PSPDFAlertView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9225C6E3184880E000B41E32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DSTROOT = /tmp/PSPDFAlertView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "PSPDFAlertView+arm64";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9225C6E4184880E000B41E32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DSTROOT = /tmp/PSPDFAlertView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "PSPDFAlertView+arm64";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9225C6A01848804300B41E32 /* Build configuration list for PBXProject "PSPDFAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9225C6C61848804300B41E32 /* Debug */,
+				9225C6C71848804300B41E32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9225C6C81848804300B41E32 /* Build configuration list for PBXNativeTarget "PSPDFAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9225C6C91848804300B41E32 /* Debug */,
+				9225C6CA1848804300B41E32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9225C6E2184880E000B41E32 /* Build configuration list for PBXNativeTarget "PSPDFAlertView+arm64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9225C6E3184880E000B41E32 /* Debug */,
+				9225C6E4184880E000B41E32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9225C69D1848804300B41E32 /* Project object */;
+}
