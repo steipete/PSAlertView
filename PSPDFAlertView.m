@@ -52,15 +52,19 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - NSObject
 
+- (id)init {
+    if ((self = [super init])) {
+        _blocks = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (id)initWithTitle:(NSString *)title {
     return self = [self initWithTitle:title message:nil];
 }
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message {
-    if ((self = [super initWithTitle:title message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil])) {
-        _blocks = [[NSMutableArray alloc] init];
-    }
-    return self;
+    return self = [super initWithTitle:title message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
 }
 
 - (void)dealloc {
