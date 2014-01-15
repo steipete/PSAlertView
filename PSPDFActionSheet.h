@@ -16,6 +16,9 @@
 /// Default initializer.
 - (id)initWithTitle:(NSString *)title;
 
+/// Basic init.
+- (id)init;
+
 /// @name Adding Buttons
 
 /// Adds a cancel button. Use only once.

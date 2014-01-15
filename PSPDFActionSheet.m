@@ -29,6 +29,16 @@
     return self;
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        
+        // Create the blocks storage for handling all button actions
+        _blocks = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)dealloc {
     self.delegate = nil;
 }
