@@ -58,6 +58,8 @@ const char kPSPDFAlertViewKey;
     // add support for the return key
     [[titlePrompt textFieldAtIndex:0] setDelegate:self];
     objc_setAssociatedObject([titlePrompt textFieldAtIndex:0], &kPSPDFAlertViewKey, titlePrompt, OBJC_ASSOCIATION_ASSIGN);
+
+    [titlePrompt show];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
