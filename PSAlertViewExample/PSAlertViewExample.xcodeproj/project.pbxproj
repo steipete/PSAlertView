@@ -21,7 +21,6 @@
 		78CCD10F168C5E4A00E09A4F /* PSCViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78CCD10D168C5E4A00E09A4F /* PSCViewController_iPad.xib */; };
 		78CCD11B168C5E5800E09A4F /* PSPDFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD116168C5E5800E09A4F /* PSPDFActionSheet.m */; };
 		78CCD11C168C5E5800E09A4F /* PSPDFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD118168C5E5800E09A4F /* PSPDFAlertView.m */; };
-		78CCD11D168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CCD11A168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +45,6 @@
 		78CCD116168C5E5800E09A4F /* PSPDFActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSPDFActionSheet.m; path = ../../PSPDFActionSheet.m; sourceTree = "<group>"; };
 		78CCD117168C5E5800E09A4F /* PSPDFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSPDFAlertView.h; path = ../../PSPDFAlertView.h; sourceTree = "<group>"; };
 		78CCD118168C5E5800E09A4F /* PSPDFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSPDFAlertView.m; path = ../../PSPDFAlertView.m; sourceTree = "<group>"; };
-		78CCD119168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PSPDFKitAdditions.h"; path = "../../UIColor+PSPDFKitAdditions.h"; sourceTree = "<group>"; };
-		78CCD11A168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PSPDFKitAdditions.m"; path = "../../UIColor+PSPDFKitAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +124,6 @@
 				78CCD116168C5E5800E09A4F /* PSPDFActionSheet.m */,
 				78CCD117168C5E5800E09A4F /* PSPDFAlertView.h */,
 				78CCD118168C5E5800E09A4F /* PSPDFAlertView.m */,
-				78CCD119168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.h */,
-				78CCD11A168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m */,
 			);
 			name = PSAlertView;
 			sourceTree = "<group>";
@@ -206,7 +201,6 @@
 				78CCD109168C5E4A00E09A4F /* PSCViewController.m in Sources */,
 				78CCD11B168C5E5800E09A4F /* PSPDFActionSheet.m in Sources */,
 				78CCD11C168C5E5800E09A4F /* PSPDFAlertView.m in Sources */,
-				78CCD11D168C5E5800E09A4F /* UIColor+PSPDFKitAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +327,7 @@
 				78CCD114168C5E4A00E09A4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

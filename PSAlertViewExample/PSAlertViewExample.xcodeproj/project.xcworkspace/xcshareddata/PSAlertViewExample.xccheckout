@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>68E34A12-5514-4585-93E2-BF838D95D0EF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PSAlertViewExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>377DF7E0-3324-49E3-AADC-3A10F726CC7A</key>
+		<string>ssh://github.com/steipete/PSAlertView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PSAlertViewExample/PSAlertViewExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>377DF7E0-3324-49E3-AADC-3A10F726CC7A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/steipete/PSAlertView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>377DF7E0-3324-49E3-AADC-3A10F726CC7A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>377DF7E0-3324-49E3-AADC-3A10F726CC7A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PSAlertView</string>
+		</dict>
+	</array>
+</dict>
+</plist>

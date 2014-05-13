@@ -2,17 +2,18 @@
 //  PSPDFActionSheet.m
 //  PSPDFKit
 //
-//  Copyright (c) 2012 Peter Steinberger. All rights reserved.
+//  Copyright (c) 2012-2014 PSPDFKit GmbH. All rights reserved.
 //
 
 #import "PSPDFActionSheet.h"
 #import <objc/runtime.h>
 
-@interface PSPDFActionSheet() <UIActionSheetDelegate> {
-    id<UIActionSheetDelegate> _realDelegate;
-    NSMutableArray *_blocks;
-    void (^_destroyBlock)(PSPDFActionSheet *sheet, NSInteger buttonIndex);
-}
+@interface PSPDFActionSheet () <UIActionSheetDelegate>
+@property (nonatomic, copy) NSArray *blocks;
+@property (nonatomic, copy) NSArray *cancelBlocks;
+@property (nonatomic, copy) NSArray *willDismissBlocks;
+@property (nonatomic, copy) NSArray *didDismissBlocks;
+@property (nonatomic, weak) id<UIActionSheetDelegate> realDelegate;
 @end
 
 @implementation PSPDFActionSheet
@@ -20,174 +21,182 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - NSObject
 
-- (id)initWithTitle:(NSString *)title {
-    if ((self = [super initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil])) {
-
-        // Create the blocks storage for handling all button actions
-        _blocks = [[NSMutableArray alloc] init];
+- (id)init {
+    if ((self = [super init])) {
+        _allowsTapToDismiss = YES;
+        [super setDelegate:self];
     }
     return self;
 }
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        
-        // Create the blocks storage for handling all button actions
-        _blocks = [[NSMutableArray alloc] init];
-    }
-    return self;
+- (id)initWithTitle:(NSString *)title {
+    return self = [super initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
 }
 
 - (void)dealloc {
     self.delegate = nil;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@: %p numberOfButtons:%zd title:%@>", self.class, self, self.numberOfButtons, self.title];
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public
 
 - (void)setDelegate:(id<UIActionSheetDelegate>)delegate {
-    if (delegate == nil) {
-        [super setDelegate:nil];
-        _realDelegate = nil;
-    }else {
-        [super setDelegate:self];
-        if (delegate != self) {
-            _realDelegate = delegate;
-        }
-    }
+    [super setDelegate:delegate ? self : nil];
+    self.realDelegate = delegate != self ? delegate : nil;
 }
 
-- (void)setDestructiveButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block {
-    assert([title length] > 0 && "sheet destructive button title must not be empty");
-
-    [self addButtonWithTitle:title extendedBlock:block];
-    self.destructiveButtonIndex = (self.numberOfButtons - 1);
+- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)(NSInteger buttonIndex))block {
+    [self addButtonWithTitle:title block:block];
+    self.destructiveButtonIndex = self.numberOfButtons - 1;
 }
 
-- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)())block {
-    block = [block copy];
-    [self setDestructiveButtonWithTitle:title extendedBlock:^(PSPDFActionSheet *alert, NSInteger buttonIndex) {
-        if (block) block();
-    }];
+- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)(NSInteger buttonIndex))block {
+    [self addButtonWithTitle:title block:block];
+    self.cancelButtonIndex = self.numberOfButtons - 1;
 }
 
-- (void)setCancelButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block {
-    assert([title length] > 0 && "sheet cancel button title must not be empty");
-
-    [self addButtonWithTitle:title extendedBlock:block];
-    self.cancelButtonIndex = (self.numberOfButtons - 1);
-}
-
-- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)())block {
-    block = [block copy];
-    [self setCancelButtonWithTitle:title extendedBlock:^(PSPDFActionSheet *sheet, NSInteger buttonIndex) {
-        if (block) block();
-    }];
-}
-
-- (void)addButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block {
-    assert([title length] > 0 && "cannot add button with empty title");
-
-    [_blocks addObject:block ? [block copy] : [NSNull null]];
+- (void)addButtonWithTitle:(NSString *)title block:(void (^)(NSInteger buttonIndex))block {
+    NSParameterAssert(title);
+    self.blocks = [[NSArray arrayWithArray:self.blocks] arrayByAddingObject:block ? [block copy] : NSNull.null];
     [self addButtonWithTitle:title];
 }
 
-- (void)addButtonWithTitle:(NSString *)title block:(void (^)())block {
-    block = [block copy];
-    [self addButtonWithTitle:title extendedBlock:^(PSPDFActionSheet *alert, NSInteger buttonIndex) {
-        if (block) block();
-    }];
-}
-
 - (NSUInteger)buttonCount {
-    return [_blocks count];
+    return self.blocks.count;
 }
 
 - (void)showWithSender:(id)sender fallbackView:(UIView *)view animated:(BOOL)animated {
-    BOOL isIPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
-    if (isIPad && [sender isKindOfClass:[UIBarButtonItem class]]) {
+    BOOL isIPad = UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad;
+    if (isIPad && [sender isKindOfClass:UIBarButtonItem.class]) {
         [self showFromBarButtonItem:sender animated:animated];
-    }else if (isIPad && [sender isKindOfClass:[UIView class]]) {
+    }else if ([sender isKindOfClass:UIToolbar.class]) {
+        [self showFromToolbar:sender];
+    }else if ([sender isKindOfClass:UITabBar.class]) {
+        [self showFromTabBar:sender];
+    }else if ([view isKindOfClass:UIToolbar.class]) {
+        [self showFromToolbar:(UIToolbar *)view];
+    }else if ([view isKindOfClass:UITabBar.class]) {
+        [self showFromTabBar:(UITabBar *)view];
+    }else if (isIPad && [sender isKindOfClass:UIView.class]) {
         [self showFromRect:[sender bounds] inView:sender animated:animated];
+    }else if ([sender isKindOfClass:NSValue.class]) {
+        [self showFromRect:[sender CGRectValue] inView:view animated:animated];
     }else {
         [self showInView:view];
     }
 }
 
 - (void)destroy {
-    [_blocks removeAllObjects];
+    self.blocks = nil;
+    self.cancelBlocks = nil;
+    self.willDismissBlocks = nil;
+    self.didDismissBlocks = nil;
+    self.delegate = nil;
+}
+
+- (void)addCancelBlock:(void (^)(NSInteger buttonIndex))cancelBlock {
+    NSParameterAssert(cancelBlock);
+    self.cancelBlocks = [[NSArray arrayWithArray:self.cancelBlocks] arrayByAddingObject:cancelBlock];
+}
+
+- (void)addWillDismissBlock:(void (^)(NSInteger buttonIndex))willDismissBlock {
+    NSParameterAssert(willDismissBlock);
+    self.willDismissBlocks = [[NSArray arrayWithArray:self.willDismissBlocks] arrayByAddingObject:willDismissBlock];
+}
+
+- (void)addDidDismissBlock:(void (^)(NSInteger buttonIndex))didDismissBlock {
+    NSParameterAssert(didDismissBlock);
+    self.didDismissBlocks = [[NSArray arrayWithArray:self.didDismissBlocks] arrayByAddingObject:didDismissBlock];
+}
+
+- (void)_callBlocks:(NSArray *)blocks withButtonIndex:(NSInteger)buttonIndex {
+    for (void (^block)(NSInteger buttonIndex) in blocks) {
+        block(buttonIndex);
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIActionSheet
 
-- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
-    [super dismissWithClickedButtonIndex:buttonIndex animated:animated];
-    [self destroy];
+- (void)showInView:(UIView *)view {
+    if (view.window) {
+        [super showInView:view];
+    }else {
+        NSLog(@"Ignoring call since view has no window.");
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIActionSheetDelegate
 
-// Called when a button is clicked. The view will be automatically dismissed after this call returns
+// Called when a button is clicked. The view will be automatically dismissed after this call returns.
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    // Run the button's block
-    if (buttonIndex >= 0 && buttonIndex < [_blocks count]) {
-        id obj = _blocks[buttonIndex];
-        if (![obj isEqual:[NSNull null]]) {
-            ((void (^)())obj)(actionSheet, buttonIndex);
+    // We want any of the will dismiss blocks to be called before the action blocks.
+    [self _callBlocks:self.willDismissBlocks withButtonIndex:buttonIndex];
+    self.willDismissBlocks = nil;
+
+    // Find the matching action block.`
+    if (buttonIndex >= 0 && buttonIndex < self.blocks.count) {
+        void (^block)(NSUInteger) = self.blocks[buttonIndex];
+        if (![block isEqual:NSNull.null]) {
+            block(buttonIndex);
         }
     }
 
-    if ([_realDelegate respondsToSelector:_cmd]) {
-        [_realDelegate actionSheet:actionSheet clickedButtonAtIndex:buttonIndex];
+    // Call cancel blocks. This is -1 if no cancel button is available.
+    if (buttonIndex == self.cancelButtonIndex) {
+        [self _callBlocks:self.cancelBlocks withButtonIndex:buttonIndex];
     }
 
-    // manually break potential retain cycles
-    [_blocks removeAllObjects];
-}
-
-// Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the cancel button.
-// If not defined in the delegate, we simulate a click in the cancel button
-- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
-    if ([_realDelegate respondsToSelector:_cmd]) {
-        [_realDelegate actionSheetCancel:actionSheet];
+    // Forward to real delegate.
+    id<UIActionSheetDelegate> delegate = self.realDelegate;
+    if ([delegate respondsToSelector:_cmd]) {
+        [delegate actionSheet:actionSheet clickedButtonAtIndex:buttonIndex];
     }
 }
 
-// before animation and showing view
-- (void)willPresentActionSheet:(UIActionSheet *)actionSheet {
-    if ([_realDelegate respondsToSelector:_cmd]) {
-        [_realDelegate willPresentActionSheet:actionSheet];
-    }
-}
-
-// after animation
-- (void)didPresentActionSheet:(UIActionSheet *)actionSheet {
-    if ([_realDelegate respondsToSelector:_cmd]) {
-        [_realDelegate didPresentActionSheet:actionSheet];
-    }
-}
-
-// before animation and hiding view
+// Before animation and hiding view.
 - (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if ([_realDelegate respondsToSelector:_cmd]) {
-        [_realDelegate actionSheet:actionSheet willDismissWithButtonIndex:buttonIndex];
+    [self _callBlocks:self.willDismissBlocks withButtonIndex:buttonIndex];
+    self.willDismissBlocks = nil;
+
+    id<UIActionSheetDelegate> delegate = self.realDelegate;
+    if ([delegate respondsToSelector:_cmd]) {
+        [delegate actionSheet:actionSheet willDismissWithButtonIndex:buttonIndex];
     }
 }
 
-// after animation
+// After animation.
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if ([_realDelegate respondsToSelector:_cmd]) {
-        [_realDelegate actionSheet:actionSheet didDismissWithButtonIndex:buttonIndex];
-    }
+    [self _callBlocks:self.didDismissBlocks withButtonIndex:buttonIndex];
 
-    [self destroy];
-    if (_destroyBlock) {
-        _destroyBlock(self, buttonIndex);
+    id<UIActionSheetDelegate> delegate = self.realDelegate;
+    if ([delegate respondsToSelector:_cmd]) {
+        [delegate actionSheet:actionSheet didDismissWithButtonIndex:buttonIndex];
     }
-    self.delegate = nil;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIPopoverController
+
+- (BOOL)popoverControllerShouldDismissPopover:(UIPopoverController *)popoverController {
+    return self.allowsTapToDismiss;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Delegate Forwarder
+
+- (BOOL)respondsToSelector:(SEL)s {
+    return [super respondsToSelector:s] || [self.realDelegate respondsToSelector:s];
+}
+
+- (id)forwardingTargetForSelector:(SEL)s {
+    id delegate = self.realDelegate;
+    return [delegate respondsToSelector:s] ? delegate : [super forwardingTargetForSelector:s];
 }
 
 @end

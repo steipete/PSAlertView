@@ -49,16 +49,15 @@ const char kPSPDFAlertViewKey;
 
     [titlePrompt textFieldAtIndex:0].text = @"Preset Text";
     [titlePrompt setCancelButtonWithTitle:PSPDFLocalize(@"Cancel") block:nil];
-    [titlePrompt addButtonWithTitle:PSPDFLocalize(@"Save") extendedBlock:^(PSPDFAlertView *alert, NSInteger buttonIndex) {
-        NSString *newSubject = [alert textFieldAtIndex:0].text ?: @"";
+    __weak PSPDFAlertView *weakAlertView = titlePrompt;
+    [titlePrompt addButtonWithTitle:PSPDFLocalize(@"Save") block:^(NSInteger buttonIndex) {
+        NSString *newSubject = [weakAlertView textFieldAtIndex:0].text ?: @"";
         NSLog(@"Entered text: %@", newSubject);
     }];
 
     // add support for the return key
     [[titlePrompt textFieldAtIndex:0] setDelegate:self];
     objc_setAssociatedObject([titlePrompt textFieldAtIndex:0], &kPSPDFAlertViewKey, titlePrompt, OBJC_ASSOCIATION_ASSIGN);
-
-    [titlePrompt showWithTintColor:[UIColor colorWithRed:0.207 green:0.345 blue:0.101 alpha:1.000]];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////

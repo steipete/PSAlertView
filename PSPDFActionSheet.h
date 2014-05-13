@@ -2,49 +2,57 @@
 //  PSPDFActionSheet.h
 //  PSPDFKit
 //
-//  Copyright (c) 2012 Peter Steinberger. All rights reserved.
+//  Copyright (c) 2012-2014 PSPDFKit GmbH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-/// Helper to add block features to UIActionSheet.
+/// Helper to add block features to `UIActionSheet`.
 /// After block has been executed, it is set to nil, breaking potential retain cycles.
 @interface PSPDFActionSheet : UIActionSheet
 
-/// @name Inititalization
+/// @name Initialization
 
 /// Default initializer.
 - (id)initWithTitle:(NSString *)title;
 
-/// Basic init.
-- (id)init;
-
 /// @name Adding Buttons
 
 /// Adds a cancel button. Use only once.
-- (void)setCancelButtonWithTitle:(NSString *) title block:(void (^)())block;
-- (void)setCancelButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block;
+- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)(NSInteger buttonIndex))block;
 
 /// Adds a destructive button. Use only once.
-- (void)setDestructiveButtonWithTitle:(NSString *) title block:(void (^)())block;
-- (void)setDestructiveButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block;
+- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)(NSInteger buttonIndex))block;
 
 /// Add regular button.
-- (void)addButtonWithTitle:(NSString *) title block:(void (^)())block;
-- (void)addButtonWithTitle:(NSString *) title extendedBlock:(void (^)(PSPDFActionSheet *sheet, NSInteger buttonIndex))block;
+- (void)addButtonWithTitle:(NSString *)title block:(void (^)(NSInteger buttonIndex))block;
 
 /// @name Properties and show/destroy
 
 /// Count the buttons.
 - (NSUInteger)buttonCount;
 
-/// Is clever about the sender, uses fallbackView if sender is not usable (nil, or not UIBarButtonItem/UIView)
+/// Is clever about the sender, uses fallbackView if sender is not usable (nil, or not `UIBarButtonItem`/`UIView`)
 - (void)showWithSender:(id)sender fallbackView:(UIView *)view animated:(BOOL)animated;
 
-/// Clears all blocks, breaks retain cycles. Automatically called once a button has been pressed.
-- (void)destroy;
+/// A `UIActionSheet` can always be cancelled, even if no cancel button is present.
+/// Use `allowsTapToDismiss` to block cancellation on tap. The control might still be cancelled from OS events.
+- (void)addCancelBlock:(void (^)(NSInteger buttonIndex))cancelBlock;
 
-/// Call block when actionsheet gets dismissed.
-@property (nonatomic, copy) void (^destroyBlock)(PSPDFActionSheet *sheet, NSInteger buttonIndex);
+/// Add block that is called after the sheet will be dismissed (before animation).
+/// @note In difference to the action sheet, this is called BEFORE any of the block-based button actions are called.
+- (void)addWillDismissBlock:(void (^)(NSInteger buttonIndex))willDismissBlock;
+
+/// Add block that is called after the sheet has been dismissed (after animation).
+- (void)addDidDismissBlock:(void (^)(NSInteger buttonIndex))didDismissBlock;
+
+/// Allows to be dismissed by tapping outside? Defaults to YES (UIActionSheet default)
+@property (nonatomic, assign) BOOL allowsTapToDismiss;
+
+@end
+
+@interface PSPDFActionSheet (PSPDFSuperclassBlock)
+
+- (id)initWithTitle:(NSString *)title delegate:(id<UIActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... __attribute__((unavailable("Please use initWithTitle:")));
 
 @end
