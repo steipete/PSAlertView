@@ -160,6 +160,13 @@
 }
 
 // Before animation and hiding view.
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet {
+    id<UIActionSheetDelegate> delegate = self.realDelegate;
+    if ([delegate respondsToSelector:_cmd]) {
+        [delegate willPresentActionSheet:actionSheet];
+    }
+}
+
 - (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
     [self _callBlocks:self.willDismissBlocks withButtonIndex:buttonIndex];
     self.willDismissBlocks = nil;
