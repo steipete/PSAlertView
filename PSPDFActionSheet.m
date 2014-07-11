@@ -123,7 +123,7 @@
 #pragma mark - UIActionSheet
 
 - (void)showInView:(UIView *)view {
-    if (view.window) {
+    if (view.window || [view isKindOfClass:[UIWindow class]]) {
         [super showInView:view];
     }else {
         NSLog(@"Ignoring call since view has no window.");
