@@ -9,6 +9,7 @@
 #import <objc/runtime.h>
 
 @interface PSPDFActionSheet () <UIActionSheetDelegate>
+@property (nonatomic, assign, getter=isDismissing) BOOL dismissing;
 @property (nonatomic, copy) NSArray *blocks;
 @property (nonatomic, copy) NSArray *cancelBlocks;
 @property (nonatomic, copy) NSArray *willDismissBlocks;
@@ -167,7 +168,19 @@
     }
 }
 
+- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
+    [super dismissWithClickedButtonIndex:buttonIndex animated:animated];
+
+    // In iOS 8, this method is being called even when we dismissed based on a button action.
+    // It's not called on iOS 7 or earlier. We track if it's a user-initiated or programmatic
+    // dismissal via `isDismissingAlertView`.
+    if (!self.isDismissing) {
+        [self actionSheet:self clickedButtonAtIndex:buttonIndex];
+    }
+}
+
 - (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    self.dismissing = YES;
     [self _callBlocks:self.willDismissBlocks withButtonIndex:buttonIndex];
     self.willDismissBlocks = nil;
 
@@ -185,6 +198,7 @@
     if ([delegate respondsToSelector:_cmd]) {
         [delegate actionSheet:actionSheet didDismissWithButtonIndex:buttonIndex];
     }
+    self.dismissing = NO;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////

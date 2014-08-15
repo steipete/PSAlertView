@@ -7,6 +7,7 @@
 #import "PSPDFAlertView.h"
 
 @interface PSPDFAlertView () <UIAlertViewDelegate>
+@property (nonatomic, assign, getter=isDismissing) BOOL dismissing;
 @property (nonatomic, copy) NSArray *blocks;
 @property (nonatomic, copy) NSArray *willDismissBlocks;
 @property (nonatomic, copy) NSArray *didDismissBlocks;
@@ -38,7 +39,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%@: %p numberOfButtons:%zd title:%@>", self.class, self, self.numberOfButtons, self.title];
+    return [NSString stringWithFormat:@"<%@: %p numberOfButtons:%zd title:%@>", NSStringFromClass(self.class), self, self.numberOfButtons, self.title];
 }
 
 - (void)destroy {
@@ -81,7 +82,13 @@
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
     [super dismissWithClickedButtonIndex:buttonIndex animated:animated];
-    [self alertView:self clickedButtonAtIndex:buttonIndex];
+
+    // In iOS 8, this method is being called even when we dismissed based on a button action.
+    // It's not called on iOS 7 or earlier. We track if it's a user-initiated or programmatic
+    // dismissal via `isDismissing`.
+    if (!self.isDismissing) {
+        [self alertView:self clickedButtonAtIndex:buttonIndex];
+    }
 }
 
 - (void)addWillDismissBlock:(void (^)(NSInteger buttonIndex))willDismissBlock {
@@ -119,6 +126,7 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    self.dismissing = YES;
     [self _callBlocks:self.willDismissBlocks withButtonIndex:buttonIndex];
 
     id<UIAlertViewDelegate> delegate = self.realDelegate;
@@ -136,6 +144,7 @@
     }
 
     [self destroy];
+    self.dismissing = NO;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
