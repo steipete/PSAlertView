@@ -31,7 +31,10 @@
 }
 
 - (id)initWithTitle:(NSString *)title {
-    return self = [super initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    if ((self = [super initWithTitle:title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil])) {
+        _allowsTapToDismiss = YES;
+    }
+    return self;
 }
 
 - (void)dealloc {
