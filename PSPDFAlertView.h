@@ -16,6 +16,7 @@
 - (id)initWithTitle:(NSString *)title;
 - (id)initWithTitle:(NSString *)title message:(NSString *)message;
 
+- (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... __attribute__((unavailable("Please use initWithTitle: or initWithTItile:message:")));
 /// @name Adding Buttons
 
 /// Add a cancel button. (use only once!)
